@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/simulation/modelsim
+vtb
+Z1 !s110 1729499506
+!i10b 1
+!s100 `H_WkGW2]k`1c^71TY0a=3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I^H6hDb<J[3[M=49[alOO63
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1726143392
+8/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/.test/tb.v
+F/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/.test/tb.v
+!i122 1
+L0 3 131
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1729499506.000000
+!s107 /home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/.test/tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/.test|/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/.test/tb.v|
+!i113 1
+Z6 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/.test
+Z7 tCvgOpt 0
+vuart_tx
+R1
+!i10b 1
+!s100 0RKDaHj=Mo9210gQ78;W11
+R2
+I3nDSS:U?6nRYAQ267`IHa1
+R3
+R0
+w1729499489
+8/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/code/uart_tx.v
+F/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/code/uart_tx.v
+!i122 0
+L0 29 110
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/code/uart_tx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/code|/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/code/uart_tx.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/code
+R7

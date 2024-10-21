@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at uart_tx.v(45): object "PARITY_BIT" differs only in case from object "parity_bit" in the same scope File: /home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/code/uart_tx.v Line: 45

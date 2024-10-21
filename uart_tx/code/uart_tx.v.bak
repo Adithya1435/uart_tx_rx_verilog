@@ -1,0 +1,138 @@
+// EcoMender Bot : Task 2A - UART Transmitter
+/*
+Instructions
+-------------------
+Students are not allowed to make any changes in the Module declaration.
+
+This file is used to generate UART Tx data packet to transmit the messages based on the input data.
+
+Recommended Quartus Version : 20.1
+The submitted project file must be 20.1 compatible as the evaluation will be done on Quartus Prime Lite 20.1.
+
+Warning: The error due to compatibility will not be entertained.
+-------------------
+*/
+
+/*
+Module UART Transmitter
+
+Input:  clk_3125 - 3125 KHz clock
+        parity_type - even(0)/odd(1) parity type
+        tx_start - signal to start the communication.
+        data    - 8-bit data line to transmit
+
+Output: tx      - UART Transmission Line
+        tx_done - message transmitted flag
+*/
+
+// module declaration
+module uart_tx(
+    input clk_3125,          // Clock input at 3.125 MHz
+    input parity_type,       // Parity type: even (0) or odd (1)
+    input tx_start,          // Start transmission signal
+    input [7:0] data,        // 8-bit data to be transmitted
+    output reg tx,           // UART transmission line
+    output reg tx_done       // Transmission complete flag
+);
+
+//////////////////DO NOT MAKE ANY CHANGES ABOVE THIS LINE//////////////////
+
+// State encoding
+localparam IDLE       = 3'b000;
+localparam START_BIT  = 3'b001;
+localparam DATA_BITS  = 3'b010;
+localparam PARITY_BIT = 3'b011;
+localparam STOP_BIT   = 3'b100;
+localparam DONE       = 3'b101;
+
+// Baud rate parameters
+localparam BAUD_RATE   = 230400;
+localparam CLOCK_FREQ  = 3125000; // 3.125 MHz
+localparam BIT_DURATION = CLOCK_FREQ / BAUD_RATE; // Number of clock cycles per bit
+
+// State machine variables
+reg [2:0] state = IDLE;      // Current state
+reg [15:0] bit_counter = 0;  // Counter for the bit duration
+reg [3:0] data_counter = 0;  // Counter for data bits
+reg parity_bit;              // Calculated parity bit
+reg [7:0] data_buffer;       // Buffer to hold the data to be transmitted
+
+// Initialize output signals
+initial begin
+    tx = 1;                  // UART line is high (idle state)
+    tx_done = 0;             // Transmission not done
+end
+
+// State machine for UART transmission
+always @(posedge clk_3125) begin
+    case (state)
+        IDLE: begin
+            tx <= 1;         // Idle line state
+            tx_done <= 0;    // Clear tx_done flag
+            if (tx_start) begin
+                // Load data into buffer and calculate parity bit
+                data_buffer <= data;
+                parity_bit <= ^data; // Calculate even parity
+                if (parity_type == 1) begin
+                    parity_bit <= ~parity_bit; // Invert for odd parity
+                end
+                // Transition to START_BIT state
+                state <= START_BIT;
+                bit_counter <= 0;
+                data_counter <= 0;
+            end
+        end
+
+        START_BIT: begin
+            tx <= 0;         // Start bit is low
+            bit_counter <= bit_counter + 1;
+            if (bit_counter == BIT_DURATION - 1) begin
+                bit_counter <= 0;
+                state <= DATA_BITS; // Move to data bits transmission
+            end
+        end
+
+        DATA_BITS: begin
+            tx <= data_buffer[data_counter]; // Transmit each bit
+            bit_counter <= bit_counter + 1;
+            if (bit_counter == BIT_DURATION - 1) begin
+                bit_counter <= 0;
+                data_counter <= data_counter + 1;
+                if (data_counter == 8) begin
+                    state <= PARITY_BIT; // Move to parity bit transmission
+                end
+            end
+        end
+
+        PARITY_BIT: begin
+            tx <= parity_bit; // Transmit parity bit
+            bit_counter <= bit_counter + 1;
+            if (bit_counter == BIT_DURATION - 1) begin
+                bit_counter <= 0;
+                state <= STOP_BIT; // Move to stop bit transmission
+            end
+        end
+
+        STOP_BIT: begin
+            tx <= 1; // Stop bit is high
+            bit_counter <= bit_counter + 1;
+            if (bit_counter == BIT_DURATION - 1) begin
+                bit_counter <= 0;
+                state <= DONE; // Move to done state
+            end
+        end
+
+        DONE: begin
+            tx_done <= 1; // Set transmission done flag
+            state <= IDLE; // Return to idle state
+        end
+
+        default: state <= IDLE;
+    endcase
+end
+
+//////////////////DO NOT MAKE ANY CHANGES BELOW THIS LINE//////////////////
+
+endmodule
+
+

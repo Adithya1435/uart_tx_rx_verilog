@@ -1,0 +1,10 @@
+
+State Machine - |uart_tx|state
+Name state.DONE state.STOP_BIT state.PARITY_BIT state.LAST_BIT state.DATA_BITS state.START_BIT state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 
+state.START_BIT 0 0 0 0 0 1 1 
+state.DATA_BITS 0 0 0 0 1 0 1 
+state.LAST_BIT 0 0 0 1 0 0 1 
+state.PARITY_BIT 0 0 1 0 0 0 1 
+state.STOP_BIT 0 1 0 0 0 0 1 
+state.DONE 1 0 0 0 0 0 1 

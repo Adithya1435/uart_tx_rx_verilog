@@ -1,0 +1,11 @@
+# Current time Sat Oct 19 15:38:24 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0x0865a577: 'Tcl_GetObjResult + 0x17' in '/home/kali-adi/Quartus/modelsim_ase/linuxaloem/vish'
+# 1    0xfffffffb: '<unknown (@0xfffffffb)>'
+# End of Stack Trace
+
