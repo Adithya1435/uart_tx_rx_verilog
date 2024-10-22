@@ -44,16 +44,13 @@ localparam PARITY_BIT = 3'b100;
 localparam STOP_BIT   = 3'b101;
 localparam DONE       = 3'b110;
 
-// Baud rate parameters
-localparam BAUD_RATE   = 230400;
-localparam CLOCK_FREQ  = 3125000;
 localparam BIT_DURATION = 15;
 
 // State machine variables
 reg [2:0] state;
 reg [3:0] bit_counter = 0;
 reg [2:0] data_counter;
-reg parity_bit;
+//reg parity_bit;
 
 // Initialize output signals
 initial begin
@@ -74,8 +71,6 @@ always @(posedge clk_3125) begin
 
         START_BIT: begin
             tx = 0;
-            parity_bit = ^data;
-				if(parity_type) parity_bit = ~parity_bit;
             data_counter = 7;
             bit_counter = bit_counter + 1;
             if (bit_counter == BIT_DURATION-1) begin
@@ -107,7 +102,8 @@ always @(posedge clk_3125) begin
 		  end
 
         PARITY_BIT: begin
-            tx = parity_bit;
+				if(parity_type) tx = ~^data;
+				else tx = ^data;
             bit_counter = bit_counter + 1;
             if (bit_counter == BIT_DURATION-1) begin
                 bit_counter = 0;
@@ -118,16 +114,18 @@ always @(posedge clk_3125) begin
         STOP_BIT: begin
             tx = 1;
             bit_counter = bit_counter + 1;
-            if (bit_counter == BIT_DURATION-2) begin
+            if (bit_counter == BIT_DURATION-1) begin
                 bit_counter = 0;
-                state = DONE;
+					 tx_done = 1;
+					 state = IDLE;
+                //state = DONE;
             end
         end
 
-        DONE: begin
-            tx_done = 1;
-            state = IDLE;
-        end
+//        DONE: begin
+//            tx_done = 1;
+//            state = IDLE;
+//        end
 
         //default: state = IDLE;
     endcase

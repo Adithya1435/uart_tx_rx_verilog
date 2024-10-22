@@ -12,10 +12,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "data[0]",
-					"strict" : false
-				},
-				{
 					"name" : "tx_start",
 					"strict" : false
 				},
@@ -44,15 +40,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "data[0]",
+					"strict" : false
+				},
+				{
 					"name" : "data[3]",
 					"strict" : false
 				},
 				{
-					"name" : "clk_3125",
+					"name" : "parity_type",
 					"strict" : false
 				},
 				{
-					"name" : "parity_type",
+					"name" : "clk_3125",
 					"strict" : false
 				}
 			]

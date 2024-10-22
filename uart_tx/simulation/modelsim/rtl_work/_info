@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 d/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/simulation/modelsim
 vtb
-Z1 !s110 1729499506
+Z1 !s110 1729595163
 !i10b 1
 !s100 `H_WkGW2]k`1c^71TY0a=3
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -26,7 +26,7 @@ Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1729499506.000000
+Z5 !s108 1729595163.000000
 !s107 /home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/.test/tb.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/.test|/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/.test/tb.v|
 !i113 1
@@ -36,16 +36,16 @@ Z7 tCvgOpt 0
 vuart_tx
 R1
 !i10b 1
-!s100 0RKDaHj=Mo9210gQ78;W11
+!s100 1MAb2iJVQfZmSiCk_giWd1
 R2
-I3nDSS:U?6nRYAQ267`IHa1
+IMUGcn2V=@7^5DiVFkF`4D3
 R3
 R0
-w1729499489
+w1729595139
 8/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/code/uart_tx.v
 F/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/code/uart_tx.v
 !i122 0
-L0 29 110
+L0 29 108
 R4
 r1
 !s85 0

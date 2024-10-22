@@ -11,29 +11,29 @@
 # 
 # vlog -vlog01compat -work work +incdir+/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/code {/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/code/uart_tx.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:01:46 on Oct 21,2024
+# Start time: 16:36:03 on Oct 22,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/code" /home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/code/uart_tx.v 
 # -- Compiling module uart_tx
 # 
 # Top level modules:
 # 	uart_tx
-# End time: 14:01:46 on Oct 21,2024, Elapsed time: 0:00:00
+# End time: 16:36:03 on Oct 22,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/.test {/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/.test/tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:01:46 on Oct 21,2024
+# Start time: 16:36:03 on Oct 22,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/.test" /home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/.test/tb.v 
 # -- Compiling module tb
 # 
 # Top level modules:
 # 	tb
-# End time: 14:01:46 on Oct 21,2024, Elapsed time: 0:00:00
+# End time: 16:36:03 on Oct 22,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" tb 
-# Start time: 14:01:46 on Oct 21,2024
+# Start time: 16:36:03 on Oct 22,2024
 # Loading work.tb
 # Loading work.uart_tx
 # 
@@ -44,10 +44,10 @@
 # Cannot lock WLF file: "vsim.wlf"
 #           errno 11: Resource temporarily unavailable.
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: kali-adi  Hostname: kali-adi  ProcessID: 29631
-#           Attempting to use alternate WLF file "./wlftt9QCMu".
+#           File in use by: kali-adi  Hostname: kali-adi  ProcessID: 53453
+#           Attempting to use alternate WLF file "./wlft6I4uC8".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftt9QCMu
+#           Using alternate file: ./wlft6I4uC8
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
@@ -57,5 +57,5 @@
 # ** Note: $stop    : /home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/.test/tb.v(128)
 #    Time: 199520 ns  Iteration: 1  Instance: /tb
 # Break in Module tb at /home/kali-adi/Documents/Eyantra_Eco_Mender/Task2/Task2a/t2a_uart/uart_tx/.test/tb.v line 128
-# End time: 14:01:59 on Oct 21,2024, Elapsed time: 0:00:13
+# End time: 16:36:25 on Oct 22,2024, Elapsed time: 0:00:22
 # Errors: 0, Warnings: 2
